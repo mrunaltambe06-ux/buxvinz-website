@@ -2,14 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>AG BUXVINZ & CO® - Premium Packaging</title>
+  <title>AG BUXVINZ &amp; CO® - Premium Packaging</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- AOS animation CSS -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-        integrity="sha512-Ho3W2q7uC18r0tH3Jwq0pSx2VINeodIZ6Tn6PvxI6Bfq5lHppZArYrusS4x+h0/pk3jfbQ3VIAtF5pP5QdXKug=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
     * {
@@ -19,9 +13,8 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      background: #02140d;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #063321 0, #02140d 40%, #010908 100%);
       color: #f5f5f5;
       line-height: 1.6;
     }
@@ -37,12 +30,13 @@
       flex-direction: column;
     }
 
+    /* HEADER */
     header {
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(0, 45, 27, 0.98);
-      border-bottom: 1px solid rgba(241, 200, 122, 0.3);
+      background: rgba(2, 20, 13, 0.96);
+      border-bottom: 1px solid rgba(241, 200, 127, 0.2);
       backdrop-filter: blur(10px);
     }
 
@@ -75,7 +69,7 @@
     .nav-badge {
       padding: 4px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(241, 200, 122, 0.8);
+      border: 1px solid rgba(241, 200, 127, 0.8);
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -83,7 +77,7 @@
       background: rgba(0, 0, 0, 0.25);
     }
 
-    /* Main layout */
+    /* SECTIONS – common */
     main {
       flex: 1;
       max-width: 960px;
@@ -91,32 +85,29 @@
       padding: 16px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 18px;
     }
 
-    section.card,
-    section.hero {
+    .card {
       background: #031810;
       border-radius: 18px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.75);
       padding: 16px 16px 18px;
       position: relative;
       overflow: hidden;
     }
 
-    section.card::before,
-    section.hero::before {
+    .card::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at top left, rgba(17, 94, 89, 0.6), transparent 55%);
-      opacity: 0.7;
+      background: radial-gradient(circle at top left, rgba(11, 99, 63, 0.4), transparent 55%);
+      opacity: 0.9;
       pointer-events: none;
     }
 
-    section.card > *,
-    section.hero > * {
+    .card > * {
       position: relative;
     }
 
@@ -124,12 +115,6 @@
       font-size: 18px;
       color: #f1c84b;
       margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 14px;
-      color: #eaf7f1;
-      margin-bottom: 8px;
     }
 
     ul {
@@ -141,11 +126,20 @@
       margin-bottom: 5px;
     }
 
-    /* Hero section */
+    /* HERO */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: #001c11;
+    }
+
     .hero-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 18px 16px 24px;
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 18px;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 16px;
       align-items: center;
     }
 
@@ -161,10 +155,10 @@
       margin-bottom: 8px;
     }
 
-    .hero-tagline {
-      font-size: 13px;
-      color: #b0e0c7;
-      margin-bottom: 10px;
+    .hero-text p {
+      font-size: 14px;
+      color: #e5f2eb;
+      margin-bottom: 12px;
     }
 
     .hero-pills {
@@ -178,7 +172,7 @@
       padding: 4px 10px;
       border-radius: 999px;
       font-size: 11px;
-      border: 1px solid rgba(240, 198, 98, 0.8);
+      border: 1px solid rgba(240, 198, 97, 0.8);
       background: rgba(3, 55, 26, 0.7);
       color: #ffe8a3;
     }
@@ -188,40 +182,31 @@
       flex-wrap: wrap;
       gap: 8px;
       align-items: center;
-      margin-bottom: 10px;
     }
 
-    .btn-primary,
-    .btn-ghost {
+    .btn-primary {
       padding: 8px 18px;
       border-radius: 999px;
       font-size: 13px;
       border: none;
       font-weight: 600;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #ffe27c, #f1c84b);
+      background: linear-gradient(135deg, #f1c84b, #ffdf90);
       color: #1a1a1a;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.75);
       transform: translateY(0);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.75);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.9);
     }
 
     .btn-ghost {
       padding: 6px 14px;
       border-radius: 999px;
-      border: 1px dashed rgba(241, 200, 122, 0.9);
+      border: 1px dashed rgba(241, 200, 127, 0.8);
       font-size: 12px;
       color: #ffe9a6;
       background: transparent;
@@ -233,7 +218,6 @@
       margin-top: 4px;
     }
 
-    /* Hero image */
     .hero-media {
       position: relative;
       display: flex;
@@ -246,9 +230,9 @@
       max-width: 340px;
       border-radius: 18px;
       overflow: hidden;
-      background: radial-gradient(circle at top, #08251b, #000a08);
+      background: radial-gradient(circle at top left, #0a3320, #000);
       padding: 10px;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9);
       animation: float 6s ease-in-out infinite;
     }
 
@@ -257,17 +241,12 @@
       50% { transform: translateY(-6px); }
     }
 
-    .hero-image-main {
-      width: 100%;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid rgba(241, 200, 122, 0.8);
-    }
-
-    .hero-image-main img {
+    .hero-card img {
       width: 100%;
       display: block;
       object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid rgba(241, 200, 127, 0.7);
     }
 
     .hero-chip {
@@ -291,23 +270,21 @@
       font-weight: 600;
     }
 
-    /* Product gallery */
+    /* PRODUCT GALLERY */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       gap: 10px;
-      margin-top: 8px;
+      margin-top: 10px;
     }
 
     .gallery-item {
       background: #041f13;
       border-radius: 14px;
       overflow: hidden;
-      border: 1px solid rgba(241, 200, 122, 0.3);
+      border: 1px solid rgba(241, 200, 127, 0.4);
       position: relative;
-      transform: translateY(0);
-      transition: transform 0.18s ease, box-shadow 0.18s ease,
-        border-color 0.18s ease;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
     }
 
     .gallery-item img {
@@ -326,11 +303,11 @@
 
     .gallery-item:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.85);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.9);
       border-color: #f1c84b;
     }
 
-    /* Contact */
+    /* CONTACT / FOOTER */
     .contact-lines p {
       margin-bottom: 4px;
       font-size: 14px;
@@ -347,8 +324,20 @@
       padding: 12px 10px 18px;
       font-size: 11px;
       color: #b7c2bc;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
       background: #011009;
+    }
+
+    /* SMOOTH SCROLL ANIMATIONS */
+    .section-animate {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .section-animate.in-view {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
@@ -366,77 +355,69 @@
       </div>
     </header>
 
-    <main>
-      <!-- HERO -->
-      <section class="hero" data-aos="fade-up">
-        <div class="hero-inner">
-          <div class="hero-text">
-            <p class="hero-tagline">
-              Strong · Elegant · Custom printed rigid &amp; cardboard boxes
-            </p>
-            <h2>Showcase your jewellery &amp; gifts in premium boxes</h2>
-            <p>
-              From rigid jewellery boxes to hampers and corporate packaging –
-              we design and manufacture boxes that make your brand look premium
-              and trustworthy.
-            </p>
+    <!-- HERO -->
+    <section class="hero section-animate">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <p class="hero-tagline">Strong · Elegant · Custom printed packaging</p>
+          <h2>Showcase your jewellery &amp; gifting in premium boxes.</h2>
+          <p>
+            From rigid jewellery boxes to hampers and corporate packaging – we design and manufacture
+            boxes that make your brand look premium and trustworthy.
+          </p>
 
-            <div class="hero-pills">
-              <div class="pill">Jewellery &amp; gift boxes</div>
-              <div class="pill">Brand logo &amp; foiling</div>
-              <div class="pill">Pan-India shipping</div>
-            </div>
-
-            <div class="hero-cta-row">
-              <a class="btn-primary"
-                 href="https://wa.me/919999999999"
-                 target="_blank" rel="noopener">
-                WhatsApp Enquiry
-              </a>
-              <a class="btn-ghost" href="tel:+919999999999">
-                Call for bulk &amp; wholesale
-              </a>
-            </div>
-
-            <p class="hero-note">
-              Minimum order for bulk &amp; wholesale available. Share your size,
-              colour and logo – we’ll suggest the right box options.
-            </p>
+          <div class="hero-pills">
+            <div class="pill">Jewellery &amp; gift boxes</div>
+            <div class="pill">Brand logo &amp; foiling</div>
+            <div class="pill">Pan-India shipping</div>
           </div>
 
-          <div class="hero-media">
-            <div class="hero-card">
-              <div class="hero-image-main">
-                <!-- Use any main hero image from your repo -->
-                <img src="1763920076327.jpg" alt="Premium jewellery rigid boxes" />
-              </div>
-              <div class="hero-chip">
-                <span>Premium rigid box</span>
-                <span>MOQ for wholesalers &amp; retailers</span>
-              </div>
+          <div class="hero-cta-row">
+            <a class="btn-primary" href="https://wa.me/917208540295" target="_blank" rel="noopener">
+              WhatsApp Enquiry
+            </a>
+            <div class="btn-ghost">
+              Min. order for bulk &amp; wholesale
+            </div>
+          </div>
+
+          <p class="hero-note">
+            Share your size, colour and logo – we’ll suggest the right box options.
+          </p>
+        </div>
+
+        <div class="hero-media">
+          <div class="hero-card">
+            <!-- तुमचा main red box photo इथे ठेवलाय -->
+            <img src="17639202578517.jpg" alt="Premium red jewellery boxes by BUXVINZ" />
+            <div class="hero-chip">
+              <span>Premium rigid box</span>
+              <span>MOQ for wholesalers &amp; retailers</span>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
+    <main>
       <!-- ABOUT US -->
-      <section class="card" data-aos="fade-up">
+      <section class="card section-animate">
         <h2>About Us</h2>
-        <p>
-          AG BUXVINZ &amp; CO is a Mumbai Sutar Chawl based manufacturer of all
-          kinds of packaging – jewellery boxes, gifting boxes, hampers, baskets
-          and more. We focus on strong build quality, neat finishing and clean
-          branding for jewellers &amp; premium brands.
-        </p>
-        <p>
-          Whether you are a small retailer or a large wholesaler, we help you
-          create packaging that feels luxurious, protects your products and
-          builds customer trust from the first unboxing moment.
-        </p>
+        <div class="two-column">
+          <p>
+            AG BUXVINZ &amp; CO is a Mumbai Sutar Chawl based manufacturer of all kinds of packaging –
+            jewellery boxes, gifting boxes, hampers, baskets and more. We focus on strong build quality,
+            neat finishing and clean branding for jewellers &amp; premium brands.
+          </p>
+          <p>
+            Whether you are a small retailer or a large wholesaler, we help you create packaging that feels
+            luxurious, protects your products and builds customer trust from the first unboxing moment.
+          </p>
+        </div>
       </section>
 
       <!-- OUR PRODUCTS -->
-      <section class="card" data-aos="fade-up">
+      <section class="card section-animate">
         <h2>Our Products</h2>
         <ul>
           <li>Jewellery packaging &amp; display boxes</li>
@@ -447,32 +428,33 @@
           <li>Corporate packaging, carry bags &amp; perfume boxes</li>
           <li>Stickers &amp; tags printing – custom logo &amp; foiling</li>
         </ul>
+      </section>
 
+      <!-- GALLERY -->
+      <section class="card section-animate">
+        <h2>Product Gallery</h2>
         <div class="gallery">
-          <div class="gallery-item" data-aos="zoom-in">
-            <img src="1763919945768.jpg" alt="Jewellery & ring box collection" />
+          <div class="gallery-item">
+            <img src="1763919945768.jpg" alt="Jewellery &amp; ring box collection" />
             <span>Jewellery &amp; ring box collection</span>
           </div>
-
-          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-            <img src="1763920076327.jpg" alt="Dry fruit & festive gift boxes" />
+          <div class="gallery-item">
+            <img src="1763920076327.jpg" alt="Dry fruit &amp; festive gift boxes" />
             <span>Dry fruit &amp; festive gift boxes</span>
           </div>
-
-          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-            <img src="1763920119656.jpg" alt="Cake, pastry & chocolate boxes" />
+          <div class="gallery-item">
+            <img src="1763920119656.jpg" alt="Cake, pastry &amp; chocolate boxes" />
             <span>Cake, pastry &amp; chocolate boxes</span>
           </div>
-
-          <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
-            <img src="1763920286336.jpg" alt="Custom size boxes with logo & foiling" />
+          <div class="gallery-item">
+            <img src="1763920286336.jpg" alt="Custom size boxes with logo &amp; foiling" />
             <span>Custom size with logo &amp; foiling</span>
           </div>
         </div>
       </section>
 
       <!-- WHY CHOOSE US -->
-      <section class="card" data-aos="fade-up">
+      <section class="card section-animate">
         <h2>Why Choose Us?</h2>
         <ul>
           <li>Reliable and durable packaging solutions</li>
@@ -483,30 +465,16 @@
         </ul>
       </section>
 
-      <!-- CONTACT -->
-      <section class="card" data-aos="fade-up">
+      <!-- CONTACT / ADDRESS -->
+      <section class="card section-animate">
         <h2>Contact &amp; Address</h2>
         <div class="contact-lines">
           <p>
-            <strong>Shop Address:</strong><br />
-            SHOP, NO-21,2ND FLOOR, ISMAIL BUILDING, 25/27, ABDUL REHMAN ST,
-            NEAR ZAVERI BAZAAR, SUTAR CHAWL, KALBADEVI, MUMBAI, MAHARASHTRA
-            400002.
+            <strong>Address:</strong><br />
+            SHOP, NO-21, 2ND FLOOR, ISMAIL BUILDING, 25/27, ABDUL REHMAN ST, NEAR ZAVERI BAZAAR,
+            SUTAR CHAWL, KALBADEVI, MUMBAI, MAHARASHTRA 400002.
           </p>
-          <p>
-            <strong>WhatsApp / Call:</strong>
-            <a href="https://wa.me/919999999999" target="_blank" rel="noopener">
-              +91 99999 99999
-            </a>
-          </p>
-          <p>
-            <strong>Email:</strong>
-            <a href="mailto:info@buxvinz.com">info@buxvinz.com</a>
-          </p>
-          <p>
-            For bulk &amp; customised orders, send your logo and size on WhatsApp –
-            we’ll share suitable box options and pricing.
-          </p>
+          <p><strong>WhatsApp / Call:</strong> <a href="https://wa.me/917208540295" target="_blank" rel="noopener">+91 72085 40295</a></p>
         </div>
       </section>
     </main>
@@ -516,19 +484,28 @@
     </footer>
   </div>
 
-  <!-- AOS animation JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
-          integrity="sha512-8VffRNU3hFZ7Z84qxdjQbaO5SpM90+hCbGyF/F7fs/3Gzdh0dX8GZFODdgNpTiFqouuRHFqRSbVSSASzdEar3g=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- SCROLL ANIMATION SCRIPT -->
   <script>
-    AOS.init({
-      duration: 900,
-      easing: 'ease-out',
-      once: true
-    });
+    document.addEventListener("DOMContentLoaded", function () {
+      // year
+      document.getElementById("year").textContent = new Date().getFullYear();
 
-    // year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
+      const sections = document.querySelectorAll(".section-animate");
+
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in-view");
+              obs.unobserve(entry.target); // once animated, don't observe again
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      sections.forEach((sec) => observer.observe(sec));
+    });
   </script>
 </body>
-  </html>
+          </html>
