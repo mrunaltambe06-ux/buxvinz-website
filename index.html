@@ -342,8 +342,19 @@
       border-top:1px solid rgba(255,255,255,0.04);
       background:#011009;
     }
-  </style>
+</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 900,
+    easing: 'ease-out',
+    once: true
+  });
+</script>
+
 </head>
+
 <body>
   <div class="page">
     <header>
@@ -357,7 +368,7 @@
         </div>
       </div>
     </header>
-    <section class="hero">
+    <section class="hero" data-aos="fade-up">
       <div class="hero-inner">
         <div class="hero-text">
           <p class="hero-tagline">
@@ -405,7 +416,7 @@
     </section>
 
     <main>
-      <section class="card">
+      <section class="card" data-aos="fade-up">
         <h2>About Us</h2>
         <div class="two-column">
           <p>
@@ -422,7 +433,7 @@
         </div>
       </section>
 
-      <section class="card">
+      <section class="card" data-aos="fade-up">
         <h2>Our Products</h2>
         <ul>
           <li>Jewellery packaging &amp; display boxes</li>
